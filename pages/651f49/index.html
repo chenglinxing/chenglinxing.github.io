@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>linux搭建node项目 | orange</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Welcome to orange blog!">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e41e53be.css" as="style"><link rel="preload" href="/assets/js/app.cad5f698.js" as="script"><link rel="preload" href="/assets/js/2.2dbfc859.js" as="script"><link rel="preload" href="/assets/js/18.bb222617.js" as="script"><link rel="prefetch" href="/assets/js/10.64a9ce0c.js"><link rel="prefetch" href="/assets/js/11.40c19f01.js"><link rel="prefetch" href="/assets/js/12.ca6a0b50.js"><link rel="prefetch" href="/assets/js/13.f149dbe3.js"><link rel="prefetch" href="/assets/js/14.021fc64e.js"><link rel="prefetch" href="/assets/js/15.33523f25.js"><link rel="prefetch" href="/assets/js/16.f83c1949.js"><link rel="prefetch" href="/assets/js/17.982d3256.js"><link rel="prefetch" href="/assets/js/19.c46d72d4.js"><link rel="prefetch" href="/assets/js/20.9bc5064a.js"><link rel="prefetch" href="/assets/js/21.01cf55d0.js"><link rel="prefetch" href="/assets/js/22.fc63e686.js"><link rel="prefetch" href="/assets/js/23.ccc3f05f.js"><link rel="prefetch" href="/assets/js/24.0f9cd9a1.js"><link rel="prefetch" href="/assets/js/25.33b190bb.js"><link rel="prefetch" href="/assets/js/3.f9eae8f8.js"><link rel="prefetch" href="/assets/js/4.809897db.js"><link rel="prefetch" href="/assets/js/5.590b1074.js"><link rel="prefetch" href="/assets/js/6.7ae3c122.js"><link rel="prefetch" href="/assets/js/7.944c568c.js"><link rel="prefetch" href="/assets/js/8.afb49d72.js"><link rel="prefetch" href="/assets/js/9.05aa1241.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e41e53be.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open no-sidebar"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.jpg" alt="orange" class="logo"> <span class="site-name can-hide">orange</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><!----> <span class="title" style="display:;">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/chenglinxing" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_43937400?type=blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    CSDN
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/avatar.jpg"> <div class="blogger-info"><h3>orange</h3> <span>记录，成为更好的自己</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><!----> <span class="title" style="display:;">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/chenglinxing" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_43937400?type=blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+    CSDN
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <!----> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=blogs" title="分类" data-v-06225672>blogs</a></li><li data-v-06225672><a href="/categories/?category=service" title="分类" data-v-06225672>service</a></li></ul> <div class="info" data-v-06225672><!----> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-06-17</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><!----> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">linux搭建node项目<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h4 id="在linux上从0开始搭建node项目"><a href="#在linux上从0开始搭建node项目" class="header-anchor">#</a> 在linux上从0开始搭建node项目</h4> <h5 id="_1-首先准备一台云服务器-例如阿里云、华为云、腾讯云都可"><a href="#_1-首先准备一台云服务器-例如阿里云、华为云、腾讯云都可" class="header-anchor">#</a> <code>1.首先准备一台云服务器：例如阿里云、华为云、腾讯云都可</code></h5> <h5 id="_2-在linux上装node并配置环境变量"><a href="#_2-在linux上装node并配置环境变量" class="header-anchor">#</a> <code>2.在linux上装node并配置环境变量</code></h5> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf search nodejs
+dnf info nodejs
+dnf <span class="token function">install</span> nodejs
+<span class="token comment">#安装完成后 node -v查看版本号</span>
+<span class="token function">node</span> -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><img src="https://img-blog.csdnimg.cn/9586065af86c49c99ee1e570fbb255f7.png" alt="在这里插入图片描述"></p> <h5 id="_3-安装npm相关"><a href="#_3-安装npm相关" class="header-anchor">#</a> <code>3.安装npm相关</code></h5> <p><code>在搭建node环境的时候，node -v能显示版本号，npm -v说这个不是命令，建议先配置一下node的环境变量</code></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#修改	/etc/profile文件</span>
+<span class="token builtin class-name">pwd</span>
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
+<span class="token comment">#编辑改文件</span>
+<span class="token function">vim</span> /etc/profile
+
+<span class="token comment">#打开文件后添加以下内容 qa编辑内容 退出保存 先esc，再:wq :wq!是强制保存退出</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_HOME</span><span class="token operator">=</span>/usr/local/node  //Node所在路径
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$NODE_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h5 id="_4-安装mysql及配置相关"><a href="#_4-安装mysql及配置相关" class="header-anchor">#</a> <code>4.安装mysql</code>及配置相关</h5> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#安装mysql</span>
+dnf <span class="token function">install</span> mysql-server
+<span class="token comment">#检验是否安装成功</span>
+mysql --version
+
+<span class="token comment">#设置mysql的账号密码</span>
+mysql_secure_installation
+
+<span class="token comment">#启动mysql服务</span>
+systemctl start mysqld
+
+<span class="token comment">#查看mysql服务是否启动成功</span>
+systemctl status mysqld
+
+<span class="token comment">#跟随服务器一起启动</span>
+systemctl <span class="token builtin class-name">enable</span>  mysqld
+
+<span class="token comment">#root为创建mysql时的用户名 pwd为密码</span>
+mysql -u root -p <span class="token builtin class-name">pwd</span>
+
+<span class="token comment">#注意1：如果使用可视化工具例如Navicat mysql端口默认为3306，服务器的安全组里面必须要有3306的端口</span>
+<span class="token comment">#注意2：如果使用Navicat等其他可视化工具连接mysql，且端口已经设置，必须要更改mysql数据库中的user表里面user为root	的host(默认host为localhost本地连接)</span>
+update user <span class="token builtin class-name">set</span> <span class="token function">host</span> <span class="token operator">=</span> <span class="token string">'%'</span> where user <span class="token operator">=</span> <span class="token string">'root'</span>
+<span class="token comment">#下图是修改后的，修改成功后即可连接远程的mysql,使用exit或quit即可退出</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p><img src="https://img-blog.csdnimg.cn/855e11f88c4b4a71a48b493ecee5a870.png" alt="在这里插入图片描述"></p> <h5 id="_5-pm2启动node程序"><a href="#_5-pm2启动node程序" class="header-anchor">#</a> <code>5.PM2启动node程序</code></h5> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#安装pm2  主要维护node进程相关，不用每次去服务器启动后台项目</span>
+<span class="token function">npm</span> <span class="token function">install</span> pm2 -g
+
+<span class="token comment"># 命名进程 app.js为入口文件 test为进程名</span>
+pm2 start app.js --name <span class="token builtin class-name">test</span>
+
+<span class="token comment">#删除全部进程</span>
+pm2 delete all
+
+<span class="token comment">#启动全部进程</span>
+pm2 start all
+
+<span class="token comment">#显示所有进程状态</span>
+pm2 list
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h5 id="_6-搭建jenkins自动化部署"><a href="#_6-搭建jenkins自动化部署" class="header-anchor">#</a> <code>6.搭建jenkins自动化部署</code></h5> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">wget</span> -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo 
+<span class="token comment">#导入GPG密钥以确保软件合法</span>
+<span class="token function">rpm</span> --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+<span class="token comment">#编辑文件 /etc/yum.repos.d/jenkins.repo</span>
+<span class="token punctuation">[</span>jenkins<span class="token punctuation">]</span>
+
+<span class="token assign-left variable">name</span><span class="token operator">=</span>Jenkins<span class="token operator">=</span>stable
+
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://pkg.jenkins.io/redhat
+
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token comment">#安装jenkins</span>
+dnf <span class="token function">install</span> jenkins	
+
+<span class="token comment">#启动jenkins服务</span>
+systemctl start jenkins
+
+<span class="token comment">#查看jenkins状态</span>
+systemctl status jenkins
+
+<span class="token comment">#跟随系统启动</span>
+systemctl <span class="token builtin class-name">enable</span> jenkins
+
+<span class="token comment">#注意：jenkins默认使用8080端口，服务器必须添加8080端口到安全组</span>
+
+<span class="token comment">#添加成功后 可以ip:8080到浏览器访问，第一次进去要先解锁jenkins,$path为页面提示的路径，直接打开页面的内容</span>
+<span class="token function">cat</span> <span class="token variable">$path</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h5 id="_7-jenkins配置相关及错误总结"><a href="#_7-jenkins配置相关及错误总结" class="header-anchor">#</a> <code>7.jenkins配置相关及错误总结</code></h5> <ul><li><p>先新建任务</p></li> <li><p>由于搭建的是node项目，在新建任务后的构建环境才会有<code>Provide Node &amp; npm bin/ folder to PATH</code>选项</p></li> <li><p>在系统管理&gt;系统配置&gt;插件管理安装nodejs插件</p></li></ul> <p><img src="https://img-blog.csdnimg.cn/fb47b5d51e2042778c2127cc637520e6.png" alt="在这里插入图片描述"></p> <p><img src="https://img-blog.csdnimg.cn/5acd18ca3c1144e0901d7557b9051409.png" alt="在这里插入图片描述"></p> <ul><li>这里显示的node版本必须先添加Nodejs，系统管理&gt;全局工具配置&gt;NodeJs</li></ul> <p><img src="https://img-blog.csdnimg.cn/c624b978574a4ecc9c9a5cd72e623031.png" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/08fae4c7db1e4a7b8b094680f3e90465.png" alt="在这里插入图片描述"></p></div></div> <!----> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=linux%20%E9%83%A8%E7%BD%B2%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20node" title="标签">#linux 部署 服务器 node</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">11/8/2022, 10:01:44 PM</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/55cdaa/"><div>
+              echarts疑难杂症
+              <!----></div></a> <span class="date">12-08</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/1b5666/"><div>
+              手绘echarts散点图
+              <!----></div></a> <span class="date">12-08</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/1c23e1/"><div>
+              自定义表单（支持插槽）
+              <!----></div></a> <span class="date">12-08</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="https://blog.csdn.net/weixin_43937400?type=blog" title="CSDN" target="_blank" class="iconfont icon-csdn"></a><a href="https://github.com/chenglinxing" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+    Theme by
+    <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> <!----></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+            跟随系统
+          </li><li class="iconfont icon-rijianmoshi">
+            浅色模式
+          </li><li class="iconfont icon-yejianmoshi">
+            深色模式
+          </li><li class="iconfont icon-yuedu">
+            阅读模式
+          </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div class="Sakura" data-v-248d85d6><canvas id="canvas_sakura" style="z-index:2;" data-v-248d85d6></canvas></div></div></div>
+    <script src="/assets/js/app.cad5f698.js" defer></script><script src="/assets/js/2.2dbfc859.js" defer></script><script src="/assets/js/18.bb222617.js" defer></script>
+  </body>
+</html>
